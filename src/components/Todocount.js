@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Todocount() {
+function Todocount({todos}) {
     return (
         <div>
-            Todo count
+           <p className="display-6 text-center text-success heading">Todo count</p>
+           <hr />
+           <h2 className="text-center text-success">{todos.length}</h2>
         </div>
     )
 }
