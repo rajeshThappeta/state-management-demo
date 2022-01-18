@@ -5,26 +5,19 @@ import { useState } from 'react'
 
 function App() {
 
-  //state
-  const [todos, setTodos] = useState([])
 
-
-  const onFormSubmit = (todoObj) => {
-
-    setTodos([...todos, todoObj.todo])
-  }
 
   return (
     <div className="container text-center mt-5">
       <div className="row">
         <div className="col-sm-4">
-          <Addotodo onFormSubmit={onFormSubmit} />
+          <Addotodo />
         </div>
         <div className="col-sm-4">
-          <Todolist todos={todos} />
+          <Todolist />
         </div>
         <div className="col-sm-4">
-          <Todocount todos={todos} />
+          <Todocount />
         </div>
       </div>
     </div>

@@ -1,11 +1,17 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
 
-function Todocount({todos}) {
+
+function Todocount() {
+
+    let todolist=useSelector(state=>state.todo)
+
+    console.log("todolist in count component is ",todolist)
     return (
         <div>
            <p className="display-6 text-center text-success heading">Todo count</p>
            <hr />
-           <h2 className="text-center text-success">{todos.length}</h2>
+            <h1 className="text-center">{todolist.length}</h1>
         </div>
     )
 }
