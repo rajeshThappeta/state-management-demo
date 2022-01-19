@@ -2,11 +2,23 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact } from '@fortawesome/free-brands-svg-icons'
+import { addTodo } from '../slices/todoSlice'
+import { useDispatch } from 'react-redux'
 
-
-function Addtodo({ onFormSubmit }) {
+function Addtodo() {
 
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const dispatch = useDispatch()
+
+    //form submit
+    const onFormSubmit = (todoObj) => {
+        // console.log(todoObj.todo);
+        //call action creator function addTodo
+        let actionObj = addTodo(todoObj.todo)
+        //dispatch actionObj to store
+        dispatch(actionObj)
+
+    }
 
 
 
